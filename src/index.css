@@ -60,6 +60,7 @@ input { font-family: inherit; }
 .h-full { height: 100%; }
 .min-h-screen { min-height: 100vh; }
 .h-20 { height: 5rem; }
+.h-16 { height: 4rem; }
 .w-64 { width: 16rem; }
 .w-40 { width: 10rem; }
 .w-12 { width: 3rem; }
@@ -84,6 +85,7 @@ input { font-family: inherit; }
 .px-4 { padding-left: 1rem; padding-right: 1rem; }
 .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
 .px-8 { padding-left: 2rem; padding-right: 2rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
 .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
 .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
 .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
