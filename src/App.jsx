@@ -109,16 +109,16 @@ function App() {
       case 'Dashboard':
         return (
           <div className="space-y-8 animate-in fade-in duration-500">
-            <div className="glass rounded-3xl p-8 relative overflow-hidden h-[300px] flex flex-col justify-end">
+            <div className="glass rounded-3xl p-6 md:p-8 relative overflow-hidden h-[300px] flex flex-col justify-end">
               <div className="absolute inset-0 bg-gradient-to-t from-bg-deep to-transparent z-10"></div>
               {/* Note: In a real app, I'd use the generated image here */}
               <div className="absolute inset-0 bg-primary-saffron/10 flex items-center justify-center">
                 <Flame size={120} className="text-primary-saffron opacity-20 animate-pulse" />
               </div>
               <div className="relative z-20">
-                <span className="text-primary-saffron font-bold text-sm tracking-widest uppercase">Welcome to Agni Setu</span>
-                <h1 className="text-5xl font-black mt-2 leading-tight">Empowering the <br /> <span className="gradient-text">Brahman Community</span></h1>
-                <p className="text-text-secondary mt-4 max-w-xl">A bridge to career opportunities, community connection, and cultural preservation.</p>
+                <span className="text-primary-saffron font-bold text-xs md:text-sm tracking-widest uppercase">Welcome to Agni Setu</span>
+                <h1 className="text-3xl md:text-5xl font-black mt-2 leading-tight break-words">Empowering the <br /> <span className="gradient-text">Brahman Community</span></h1>
+                <p className="text-text-secondary mt-4 max-w-xl text-sm md:text-base">A bridge to career opportunities, community connection, and cultural preservation.</p>
               </div>
             </div>
 
@@ -148,9 +148,9 @@ function App() {
       case 'Careers':
         return (
           <div className="space-y-8">
-            <div className="flex justify-between items-center">
-              <h1 className="text-4xl font-black">Careers & Freelance</h1>
-              <button className="px-6 py-3 bg-primary-saffron text-black font-bold rounded-xl hover:shadow-[0_0_20px_rgba(255,153,51,0.4)] transition-all">Post an Opening</button>
+            <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-4">
+              <h1 className="text-3xl md:text-4xl font-black break-words">Careers & Freelance</h1>
+              <button className="w-full sm:w-auto px-6 py-3 bg-primary-saffron text-black font-bold rounded-xl hover:shadow-[0_0_20px_rgba(255,153,51,0.4)] transition-all">Post an Opening</button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                <JobCard title="Frontend Developer" company="Agni Softwares" location="Mumbai" type="Contract" salary="₹80k/mo" />
@@ -164,13 +164,13 @@ function App() {
         );
       case 'Connect':
         return (
-          <div className="space-y-8">
-            <div className="flex justify-between items-center">
-              <h1 className="text-4xl font-black">Community Connect</h1>
-              <div className="flex gap-2">
-                <div className="glass px-4 py-2 rounded-xl text-sm flex items-center gap-2 border-primary-saffron/20">
+          <div className="space-y-6 md:space-y-8">
+            <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-4">
+              <h1 className="text-3xl md:text-4xl font-black break-words">Community Connect</h1>
+              <div className="flex gap-2 w-full sm:w-auto">
+                <div className="glass px-4 py-2 rounded-xl text-sm flex items-center gap-2 border-primary-saffron/20 w-full sm:w-64">
                   <Search size={16} className="text-text-secondary" />
-                  <input type="text" placeholder="Search members..." className="bg-transparent border-none outline-none text-white w-40" />
+                  <input type="text" placeholder="Search members..." className="bg-transparent border-none outline-none text-white w-full" />
                 </div>
               </div>
             </div>
@@ -187,9 +187,9 @@ function App() {
       case 'Dharma':
         return (
           <div className="space-y-8">
-            <div className="flex justify-between items-center">
-              <h1 className="text-4xl font-black gradient-text">Dharma Services</h1>
-              <button className="px-6 py-3 border border-accent-red/50 text-accent-red font-bold rounded-xl hover:bg-accent-red hover:text-white transition-all">List Your Services</button>
+            <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-4">
+              <h1 className="text-3xl md:text-4xl font-black gradient-text break-words">Dharma Services</h1>
+              <button className="w-full sm:w-auto px-6 py-3 border border-accent-red/50 text-accent-red font-bold rounded-xl hover:bg-accent-red hover:text-white transition-all">List Your Services</button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="glass p-8 rounded-3xl space-y-6">
@@ -222,8 +222,8 @@ function App() {
       case 'Gyan':
         return (
           <div className="space-y-8">
-             <div className="flex justify-between items-center">
-              <h1 className="text-4xl font-black">Vedic Library (Gyan)</h1>
+             <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-4">
+              <h1 className="text-3xl md:text-4xl font-black break-words">Vedic Library (Gyan)</h1>
               <div className="glass px-4 py-2 rounded-xl border-primary-saffron/20 flex items-center gap-2">
                 <BookOpen size={18} className="text-primary-saffron" />
                 <span className="text-sm font-semibold">1,200+ Resources</span>
@@ -305,11 +305,11 @@ function App() {
         {/* Top Nav */}
         <header className="h-20 glass sticky top-0 z-40 px-4 md:px-8 flex items-center justify-between border-b border-glass-border">
           {/* Mobile Branding */}
-          <div className="flex md:hidden items-center gap-2">
-            <div className="w-8 h-8 bg-primary-saffron rounded-lg flex items-center justify-center">
+          <div className="flex md:hidden items-center gap-2 max-w-[50%]">
+            <div className="w-8 h-8 bg-primary-saffron rounded-lg flex items-center justify-center flex-shrink-0">
               <Flame size={18} className="text-black" />
             </div>
-            <span className="text-lg font-black tracking-tighter brand-font">AGNI SETU</span>
+            <span className="text-base font-black tracking-tighter brand-font truncate">AGNI SETU</span>
           </div>
 
           <div className="hidden md:flex items-center gap-2 glass px-4 py-2 rounded-xl text-sm border-white/5">
@@ -370,8 +370,8 @@ function App() {
               activeTab === item.id ? 'text-primary-saffron' : 'text-text-secondary'
             }`}
           >
-            <item.icon size={24} />
-            <span className="text-[10px] font-bold uppercase tracking-widest">{item.id === 'Dashboard' ? 'Home' : item.id}</span>
+            <item.icon size={20} className="md:size-24" />
+            <span className="text-[9px] font-bold uppercase tracking-wider">{item.id === 'Dashboard' ? 'Home' : item.id}</span>
           </button>
         ))}
       </nav>

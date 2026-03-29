@@ -21,8 +21,8 @@
 }
 
 /* Base Styles */
-body { margin: 0; min-height: 100vh; overflow-x: hidden; display: flex; }
-#root { width: 100%; }
+body { margin: 0; min-height: 100vh; overflow-x: hidden; display: flex; width: 100%; position: relative; }
+#root { width: 100%; overflow-x: hidden; }
 * { box-sizing: border-box; }
 h1, h2, h3, h4, .brand-font { font-family: 'Outfit', sans-serif; margin: 0; color: #111; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; transition: all 0.3s ease; }
@@ -57,6 +57,7 @@ input { font-family: inherit; }
 
 /* Spacing & Sizing */
 .w-full { width: 100%; }
+.max-w-full { max-width: 100%; }
 .h-full { height: 100%; }
 .min-h-screen { min-height: 100vh; }
 .h-20 { height: 5rem; }
@@ -102,9 +103,18 @@ input { font-family: inherit; }
 .space-y-4 > * + * { margin-top: 1rem; }
 .space-y-6 > * + * { margin-top: 1.5rem; }
 .space-y-8 > * + * { margin-top: 2rem; }
+.break-words { overflow-wrap: break-word; word-break: break-word; }
+.whitespace-normal { white-space: normal; }
 
 /* Responsive Grid */
-@media (min-width: 640px) { .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 640px) { 
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } 
+  .sm\:flex-row { flex-direction: row !important; }
+  .sm\:justify-between { justify-content: space-between !important; }
+  .sm\:items-center { align-items: center !important; }
+  .sm\:w-auto { width: auto !important; }
+  .sm\:w-64 { width: 16rem !important; }
+}
 @media (min-width: 768px) { 
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -165,8 +175,19 @@ input { font-family: inherit; }
 .text-lg { font-size: 1.125rem; }
 .text-xl { font-size: 1.25rem; }
 .text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
 .text-4xl { font-size: 2.25rem; }
 .text-5xl { font-size: 3rem; }
+
+/* Responsive Overrides */
+@media (max-width: 767px) {
+  .text-4xl { font-size: 1.75rem; }
+  .text-5xl { font-size: 2.25rem; }
+  .p-8 { padding: 1rem; }
+  .p-6 { padding: 0.75rem; }
+  .px-8 { padding-left: 1rem; padding-right: 1rem; }
+  .gap-8 { gap: 1rem; }
+}
 .font-medium { font-weight: 500; }
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
